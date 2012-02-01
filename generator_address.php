@@ -181,6 +181,7 @@ class Generator_Address extends Generator_Sentence
 
         $address = trim(implode(' ', $address), ' ,');
         $address = str_replace(' ,', ',', $address);
+        $address = preg_replace('/[ ]+/usi', ' ', $address);
 
         return $address;
     }
