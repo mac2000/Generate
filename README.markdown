@@ -16,6 +16,16 @@ Usage example:
         echo $n->next() . PHP_EOL;
     ?>
 
+OR:
+
+    <?php
+        require_once 'Generate/generate.php';
+
+        echo Generate::get(Generate::ADDRESS) . PHP_EOL;
+        echo Generate::get(Generate::EMAIL) . PHP_EOL;
+        echo Generate::get(Generate::URL) . PHP_EOL;
+    ?>
+
 Will produce:
 
     Evanston 84066 94 Ruiz street, Utah
