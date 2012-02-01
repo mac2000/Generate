@@ -42,23 +42,23 @@ class Generator_Url extends Generator_Abstract
      */
     protected $_domainGenerator;
     /**
-         * Sentence generator
-         *
-         * @var Generator_Sentence
-         */
-        protected $_sentenceGenerator;
+     * Sentence generator
+     *
+     * @var Generator_Sentence
+     */
+    protected $_sentenceGenerator;
     /**
-         * Transliterator
-         *
-         * @var Transliterate
-         */
-        protected $_transliterate;
+     * Transliterator
+     *
+     * @var Transliterate
+     */
+    protected $_transliterate;
     /**
-         * Number generator
-         *
-         * @var Generator_Number
-         */
-        protected $_numberGenerator;
+     * Number generator
+     *
+     * @var Generator_Number
+     */
+    protected $_numberGenerator;
 
     public function __construct()
     {
@@ -82,6 +82,6 @@ class Generator_Url extends Generator_Abstract
         $domain = $this->_domainGenerator->next();
         $slug = $this->_transliterate->slug($this->_sentenceGenerator->next($this->_numberGenerator->next(1, 5), false));
         $suffix = $suffixes[array_rand($suffixes)];
-        return (string) 'http://' . $www . $domain . '/' . $slug . $suffix;
+        return (string)'http://' . $www . $domain . '/' . $slug . $suffix;
     }
 }
