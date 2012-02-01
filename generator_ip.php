@@ -15,13 +15,13 @@ require_once 'generator_abstract.php';
  */
 require_once 'generator_number.php';
 /**
- * Class for generating Zip code.
+ * Class for generating ip address.
  *
  * @category   Library
  * @package    Generator
- * @subpackage Zip
+ * @subpackage Ip
  */
-class Generator_Zip extends Generator_Abstract
+class Generator_Ip extends Generator_Abstract
 {
     /**
      * Number generator
@@ -37,20 +37,19 @@ class Generator_Zip extends Generator_Abstract
     }
 
     /**
-     * Generate ZIP code
+     * Generate Ip
      *
-     * @return int
+     * @return string
      */
     public function next()
     {
         $this->srand();
-        $zip = array(
-            $this->_numberGenerator->next(1,9),
-            $this->_numberGenerator->next(0,9),
-            $this->_numberGenerator->next(0,9),
-            $this->_numberGenerator->next(0,9),
-            $this->_numberGenerator->next(0,9),
+        $ip = array(
+            $this->_numberGenerator->next(1,254),
+            $this->_numberGenerator->next(1,254),
+            $this->_numberGenerator->next(1,254),
+            $this->_numberGenerator->next(1,254),
         );
-        return (int)implode('', $zip);
+        return implode('.', $ip);
     }
 }
